@@ -1,0 +1,19 @@
+Overall: 
+percentage: 22.7%
+
+==============================================================
+
+comp5111.assignment.cut.Subject$ParameterHandler
+percentage: 10.0%
+
+comp5111.assignment.cut.Subject$SortTools
+percentage: 4.8%
+
+comp5111.assignment.cut.Subject$NumberHandler
+percentage: 30.4%
+
+comp5111.assignment.cut.Subject$TaskHandler
+percentage: 56.9%
+
+comp5111.assignment.cut.Subject$TextHandler
+percentage: 23.9%

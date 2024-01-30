@@ -4,4 +4,4 @@ This repository contains materials of HKUST COMP5111's assignments. Each assignm
 
 ## Assignment
 
-(To be released.)
+- Assignment 1: branch [`asn1`](../../tree/asn1) (Deadline: 11:55 pm 16 March 2024)

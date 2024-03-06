@@ -5,6 +5,8 @@
 ## Update:
 (Feb 1): Release the [tutorial workshop slide (preview version)](tutorials/COMP5111_24S_workshop_songqiang_Feb1_ForStuPreview.pdf). *You are highly recommended to preview the slide (and play with the tools if interested) before the tutorial on Feb 14.*
 
+(Mar 6): Remove the unused library `evosuite` from `pom.xml`. This change does not affect your implementation since this library is not used in this assignment. It is just for avoiding unnecessary troubles for students who use Maven to set up the environment.
+
 ## Assignment Objective
 
 In assignment 1, you are expected to: 

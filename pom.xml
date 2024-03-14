@@ -72,16 +72,6 @@
             <artifactId>soot</artifactId>
             <version>4.2.1</version>
         </dependency>
-        <!-- <dependency>
-            <groupId>org.evosuite</groupId>
-            <artifactId>evosuite</artifactId>
-            <version>1.2.0</version>
-        </dependency> -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
         <dependency>
             <groupId>com.github.javaparser</groupId>
             <artifactId>javaparser-symbol-solver-core</artifactId>

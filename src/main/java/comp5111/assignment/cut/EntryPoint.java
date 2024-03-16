@@ -1,23 +1,12 @@
-package comp5111.assignment;
+package comp5111.assignment.cut;
 
-import org.junit.runner.JUnitCore;
-import soot.Pack;
-import soot.PackManager;
-import soot.Scene;
-import soot.Transform;
+import soot.*;
 import soot.options.Options;
+import org.junit.runner.JUnitCore;
 
 public class EntryPoint {
-    public static void main(String[] args) {
-        instrumentWithSoot();
-        // after instrument, we run Junit tests
-        runJunitTests();
-        // after junit test running, we have already get the counting in the Counter class
-        System.out.println("Invocation to static methods: " + Counter.getNumStaticInvocations());
-        System.out.println("Invocation to instance methods: " + Counter.getNumInstanceInvocations());
-    }
 
-    private static void instrumentWithSoot() {
+	public static void instrumentWithSoot(String[] classUnderTest, BodyTransformer instrumenter) {
         // the path to the compiled Subject class file
         String classUnderTestPath = "./raw-classes";
         String targetPath = "./target/classes";
@@ -42,19 +31,17 @@ public class EntryPoint {
         /* add a phase to transformer pack by call Pack.add */
         Pack jtp = PackManager.v().getPack("jtp");
 
-        Instrumenter instrumenter = new Instrumenter();
         jtp.add(new Transform("jtp.instrumenter", instrumenter));
 
-        String classUnderTest = "comp5111.assignment.cut.Subject";
         // pass arguments to soot
-        soot.Main.main(new String[]{classUnderTest});  // added phases will be executed in this method
+        soot.Main.main(classUnderTest);  // added phases will be executed in this method
     }
 
-    private static void runJunitTests() {
+	public static void runJunitTests(String test_suite) {
         Class<?> testClass = null;
         try {
             // here we programmitically run junit tests
-            testClass = Class.forName("comp5111.assignment.cut.RegressionTestTask2");
+            testClass = Class.forName("comp5111.assignment.cut." + test_suite);
             JUnitCore junit = new JUnitCore();
             System.out.println("Running junit test: " + testClass.getName());
             junit.run(testClass);

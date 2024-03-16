@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # 1 Compile all the java to .class
+
+find src/* -name "*.java" -print0 | xargs -0  javac -classpath "lib/*;target/classes" -d target/classes
+
 javac 	-classpath "lib/*;target/classes" \
 		-d target/classes \
 		src/main/java/comp5111/assignment/Assignment1.java \
@@ -17,6 +20,12 @@ javac 	-classpath "lib/*;target/classes" \
 		
 # 2 test 
 java -ea -classpath "lib/*;target/classes" comp5111.assignment.EntryPoint
+
+comp5111.assignment.Assignment1 2 RegressionTest0
+
+java -ea -classpath "lib/*;target/classes" comp5111.assignment.Assignment1 2 RegressionTestTask2
+
+
 # 3. we run the main method of castle.comp5111.assignment.EntryPoint
 java -classpath .:"$ROOT_DIR"/lib/*:"$ROOT_DIR"/target/classes castle.comp5111.assignment.EntryPoint
 
